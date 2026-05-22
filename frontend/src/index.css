@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans Tamil', 'Noto Sans', 'Segoe UI', sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: #2563eb;
+  color: #fff;
+}
+
+.tamil-subtle {
+  font-size: 0.78rem;
+  opacity: 0.58;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  margin-top: 0.2rem;
+}
+
+.tamil-ticker {
+  display: inline-block;
+  animation: tamilTicker 20s linear infinite;
+}
+
+.auth-fade-in {
+  animation: authFadeIn 280ms ease-out both;
+}
+
+.brand-logo {
+  font-family: 'Cinzel', 'Noto Sans Tamil', 'Noto Sans', serif;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  background-image: linear-gradient(110deg, #7c3f00 0%, #f59e0b 18%, #fef3c7 42%, #f59e0b 62%, #92400e 82%, #fde68a 100%);
+  background-size: 240% 240%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldFlow 5.5s linear infinite;
+  text-shadow: 0 0 24px rgba(245, 158, 11, 0.18);
+}
+
+@keyframes tamilTicker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes authFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goldFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 240% 50%; }
+}
+
+.celebration-overlay {
+  backdrop-filter: blur(12px);
+}
+
+.celebration-shape {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 9999px;
+  opacity: 0;
+  animation: riseFade 2.2s ease-out forwards;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
+}
+
+.celebration-star {
+  border-radius: 1rem;
+}
+
+@keyframes riseFade {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-60px) scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-120px) scale(0.85);
+    opacity: 0;
+  }
+}
